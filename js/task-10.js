@@ -11,7 +11,7 @@ console.log(inputEl);
 
 btnCreateEl.addEventListener('click', createBoxes);
 btnDestroyEl.addEventListener('click', destroyEverything);
-btnClearEl.addEventListener('click', clearInput)
+// btnClearEl.addEventListener('click', clearInput)
 
 function createBoxes(event) {
   let boxSize = 30;
@@ -32,9 +32,9 @@ function destroyEverything() {
   boxEls.innerHTML = '';
 }
 
-function clearInput() {
-  inputEl.value = '';
-}
+// function clearInput() {
+//   inputEl.value = '';
+// }
 
 {/* <div id="controls">
   <input type="number" min="1" max="100" step="1" />
