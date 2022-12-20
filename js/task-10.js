@@ -1,20 +1,22 @@
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 }
+const controlsEl = document.querySelector('#controls');
+controlsEl.insertAdjacentHTML("beforeend", '<button type="button" data-clear>Clear box size</button>');
 
 const inputEl = document.querySelector('[type="number"]');
 const btnCreateEl = document.querySelector('[data-create]');
 const btnDestroyEl = document.querySelector('[data-destroy]');
-// const btnClearEl = document.querySelector('[data-clear]');
+const btnClearEl = document.querySelector('[data-clear]');
 const boxEls = document.querySelector('#boxes');
 console.log(inputEl);
 
 btnCreateEl.addEventListener('click', createBoxes);
 btnDestroyEl.addEventListener('click', destroyEverything);
-// btnClearEl.addEventListener('click', clearInput)
+btnClearEl.addEventListener('click', clearBoxSize);
 
+let boxSize = 30;
 function createBoxes(event) {
-  let boxSize = 30;
   const boxElements = [];
 
   if (event) {
@@ -32,9 +34,12 @@ function destroyEverything() {
   boxEls.innerHTML = '';
 }
 
-// function clearInput() {
-//   inputEl.value = '';
-// }
+function clearBoxSize() {
+  boxSize = 30;
+}
+
+
+// inputEl.value = '';
 
 {/* <div id="controls">
   <input type="number" min="1" max="100" step="1" />

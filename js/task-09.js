@@ -10,6 +10,6 @@ btnEl.addEventListener('click', onBtnClick)
 function onBtnClick(event) {
     const randomColor = getRandomHexColor();
     
-    textEl.textContent = `${randomColor}`;
+    textEl.textContent = randomColor;
     document.body.style.backgroundColor = randomColor;
 }
